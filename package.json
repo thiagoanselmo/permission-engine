@@ -1,7 +1,7 @@
 {
   "name": "permission-engine",
   "description": "Utility permission engine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "exports": {
     "require": "./dist/bundle.cjs",
     "import": "./dist/bundle.mjs"
