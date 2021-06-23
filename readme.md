@@ -5,6 +5,13 @@
 In the permissions check it only has **sync** functions, as we prioritize the speed of validations, so all **async** calls
 must be done before passing to the validator.
 
+### Install package
+
+To install package use:
+
+1. npm i permission-engine --save
+2. yarn add permission-engine
+
 ### Types, which are fundamental in the search engine.
 Para uma melhor entendimento, buscamos usar os mesmos operadores igual mongoDB, pois já é um uso comum da comunidade.
 
@@ -13,13 +20,6 @@ Para uma melhor entendimento, buscamos usar os mesmos operadores igual mongoDB, 
 3. $and - Must contain all;
 4. $not - It must contain none;
 5. $regex - Regular expression;
-
-### Install package
-
-To install package use:
-
-1. npm i permission-engine --save
-2. yarn add permission-engine
 
 #### `$in` Operator This is an operator that will return `true` if it matches any "role" the user contains.
 
