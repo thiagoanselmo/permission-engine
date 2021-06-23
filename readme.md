@@ -14,12 +14,18 @@ Para uma melhor entendimento, buscamos usar os mesmos operadores igual mongoDB, 
 4. $not - It must contain none;
 5. $regex - Regular expression;
 
+### Install package
+
+To install package use:
+
+1. npm i permission-engine --save
+2. yarn add permission-engine
+
 #### `$in` Operator This is an operator that will return `true` if it matches any "role" the user contains.
 
 ##### Example 1
 
-
-    import PermissionEngine from '@actum/permission-engine';
+    import PermissionEngine from 'permission-engine';
 
     const userPermission = ['actum:admin', 'page:client', 'page:client:create'];
     const routePermission =  [{
@@ -32,8 +38,7 @@ Para uma melhor entendimento, buscamos usar os mesmos operadores igual mongoDB, 
 
 ##### Example 2
 
-
-    import PermissionEngine from '@actum/permission-engine';
+    import PermissionEngine from 'permission-engine';
 
     const userPermission = [
         'actum:user', 'page:report:pdf:reader', 'page:report:xls:reader',
@@ -58,8 +63,7 @@ Para uma melhor entendimento, buscamos usar os mesmos operadores igual mongoDB, 
 
 ##### Example 1
 
-
-    import PermissionEngine from '@actum/permission-engine';
+    import PermissionEngine from 'permission-engine';
 
     const userPermission = ['actum:partner', 'page:report:xlsx:reader', 'page:report:docx:reader', 'page:report:pdf:reader'];
     const routePermission =  [{
