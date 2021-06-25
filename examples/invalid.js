@@ -1,4 +1,4 @@
-import PermissionEngine from '../lib/permissionEngine.js';
+import PermissionEngine, { ErrorPermissionEngine } from '../lib/permissionEngine.js';
 
 /**
  permissionEngine @type {string[]} - user ABAC attributes
@@ -31,22 +31,31 @@ const case$allTwo = {
 
 function caseOne() {
   console.time('timerOne');
+  let canAccess = false;
 
-  const permissionEngine = new PermissionEngine();
-  const canAcess = permissionEngine.canAccess(userRuleOne, case$allOne.rule);
+  try {
+    const permissionEngine = new PermissionEngine();
+    canAccess = permissionEngine.canAccess(userRuleOne, case$allOne.rule);
+  } catch (ex) {
+    if (ex instanceof ErrorPermissionEngine) {
+      console.error('Error!', ex.message);
+    } else {
+      throw ex;
+    }
+  }
 
   console.timeEnd('timerOne');
-  console.log('Case one can access:', canAcess, '\n');
+  console.log('Case one can access:', canAccess, '\n');
 }
 
 function caseTwo() {
   console.time('timerTwo');
 
   const permissionEngine = new PermissionEngine();
-  const canAcess = permissionEngine.canAccess(userRuleTwo, case$allTwo.rule);
+  const canAccess = permissionEngine.canAccess(userRuleTwo, case$allTwo.rule);
 
   console.timeEnd('timerTwo');
-  console.log('Case two can access:', canAcess, '\n');
+  console.log('Case two can access:', canAccess, '\n');
 }
 
 const cases = [caseOne, caseTwo];
