@@ -119,7 +119,7 @@ This class to get error custom the `permission-engine` package
 **Attention: The `$not` operator follows the same principle as the `$and` operator, but negates the expression.**
 
 
-#### Use in projects 
+### Use in projects 
 
 This permission engine will be used to create an ACL plugin for:
 
