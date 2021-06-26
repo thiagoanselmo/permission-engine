@@ -21,6 +21,38 @@ Para uma melhor entendimento, buscamos usar os mesmos operadores igual mongoDB, 
 4. $not - It must contain none;
 5. $regex - Regular expression;
 
+### Class Error `ErrorPermissionEngine`
+This class to get error custom the `permission-engine` package
+
+    import PermissionEngine, { ErrorPermissionEngine } from '../lib/permissionEngine.js';
+
+    const userRuleOne = [];
+    const case$allOne = [{
+        $and: [
+            'actum:partner',
+            {$nin: ['page:report:pdf:reader']},
+            {$regex: /page:report:\w*:reader/}
+        ]
+    }];    
+    
+    console.time('timerOne');
+    let canAccess = false;
+    
+    try {
+        const permissionEngine = new PermissionEngine();
+        canAccess = permissionEngine.canAccess(userRuleOne, case$allOne.rule);
+    } catch (ex) {
+        if (ex instanceof ErrorPermissionEngine) {
+          console.error('Error!', ex.message);
+          // output Error! Fail, roles or userRoles is empty, verify roles and try again
+        } else {
+          throw ex;
+        }
+     }
+    
+      console.timeEnd('timerOne');
+      console.log('Case one can access:', canAccess, '\n');
+
 #### `$in` Operator This is an operator that will return `true` if it matches any "role" the user contains.
 
 ##### Example 1
