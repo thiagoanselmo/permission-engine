@@ -24,6 +24,7 @@ Para uma melhor entendimento, buscamos usar os mesmos operadores igual mongoDB, 
 ### Class Error `ErrorPermissionEngine`
 This class to get error custom the `permission-engine` package
 
+```javascript
     import PermissionEngine, { ErrorPermissionEngine } from '../lib/permissionEngine.js';
 
     const userRuleOne = [];
@@ -52,11 +53,13 @@ This class to get error custom the `permission-engine` package
     
       console.timeEnd('timerOne');
       console.log('Case one can access:', canAccess, '\n');
+```
 
 #### `$in` Operator This is an operator that will return `true` if it matches any "role" the user contains.
 
 ##### Example 1
 
+```javascript
     import PermissionEngine from 'permission-engine';
 
     const userPermission = ['actum:admin', 'page:client', 'page:client:create'];
@@ -67,9 +70,10 @@ This class to get error custom the `permission-engine` package
     const permissionEngine = new PermissionEngine();
     const canAccess = permissionEngine.canAccess(userPermission, routePermission);
     // output true
+```
 
 ##### Example 2
-
+```javascript
     import PermissionEngine from 'permission-engine';
 
     const userPermission = [
@@ -86,14 +90,15 @@ This class to get error custom the `permission-engine` package
     const permissionEngine = new PermissionEngine();
     const canAccess = permissionEngine.canAccess(userPermission, routePermission);
     // output true
+```
 
-
-**Attention: The `$nin` operator follows the same principle as the `$in` operator but negates the expression. ** 
+**Attention: The `$nin` operator follows the same principle as the `$in` operator but negates the expression.** 
 
 
 #### `$and` operator this is an operator that will return `true` if it matches **all** rules.
 
 ##### Example 1
+```javascript
 
     import PermissionEngine from 'permission-engine';
 
@@ -109,9 +114,9 @@ This class to get error custom the `permission-engine` package
     const permissionEngine = new PermissionEngine();
     const canAccess = permissionEngine.canAccess(userPermission, routePermission);
     // output true
+```
 
-
-**Attention: The `$not` operator follows the same principle as the `$and` operator, but negates the expression. **
+**Attention: The `$not` operator follows the same principle as the `$and` operator, but negates the expression.**
 
 
 #### Use in projects 
