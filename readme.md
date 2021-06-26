@@ -123,6 +123,6 @@ This class to get error custom the `permission-engine` package
 
 This permission engine will be used to create an ACL plugin for:
 
-* Vuejs (frontEnd) - Wait for the link soon;
+* Vuejs (frontEnd) - [permission-vue](https://github.com/thiagoanselmo/permission-vue);
 * Hapijs (Backend) - Wait for the link soon;
 * Expressjs (Backend) - Wait for the link soon;
