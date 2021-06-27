@@ -2,7 +2,7 @@ import cleanup from 'rollup-plugin-cleanup';
 import { uglify } from "rollup-plugin-uglify";
 
 export default {
-  input: './lib/permissionEngine.js',
+  input: './lib/index.js',
   output: [
     {
       file: 'dist/bundle.cjs',
